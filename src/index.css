@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-gray-950 text-white antialiased;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overscroll-behavior: none;
+    touch-action: pan-x pan-y;
+  }
+
+  html, body, #root {
+    @apply h-full w-full overflow-x-hidden;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/10 dark:bg-black/10 backdrop-blur-md border border-white/20 dark:border-white/10;
+  }
+  
+  .glass-strong {
+    @apply bg-white/20 dark:bg-black/20 backdrop-blur-xl border border-white/30 dark:border-white/20;
+  }
+
+  .gradient-primary {
+    @apply bg-gradient-to-r from-primary-600 to-accent-600;
+  }
+
+  .gradient-overlay {
+    @apply bg-gradient-to-t from-black/80 via-black/40 to-transparent;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .safe-top {
+    padding-top: env(safe-area-inset-top);
+  }
+
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+.leaflet-container {
+  @apply rounded-2xl overflow-hidden;
+}
